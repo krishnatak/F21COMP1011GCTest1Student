@@ -8,9 +8,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class NetflixTableController implements Initializable {
+
 
     @FXML
     private TableView<NetflixShow> tableView;
@@ -47,6 +50,9 @@ public class NetflixTableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<String> validRates = Arrays.asList("PG-13","R","TV-14","TV-G","TV-MA","TV-Y","TV-Y7");
+        selectRatingComboBox.getItems().addAll(validRates);
+       selectRatingComboBox.getSelectionModel().getSelectedItem();
 
         showIdCol.setCellValueFactory(new PropertyValueFactory<>("showId"));
         typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -58,7 +64,7 @@ public class NetflixTableController implements Initializable {
         castCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
         castCol.setCellValueFactory(new PropertyValueFactory<>("duration"));
         castCol.setCellValueFactory(new PropertyValueFactory<>("listed_in"));
-        castCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("description "));
         castCol.setCellValueFactory(new PropertyValueFactory<>("director"));
         selectRatingComboBox.getItems().add("All ratings");
 

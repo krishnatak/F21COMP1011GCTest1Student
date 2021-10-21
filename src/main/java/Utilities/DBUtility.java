@@ -1,6 +1,7 @@
 package Utilities;
 
 import com.example.f21comp1011gctest1student.NetflixShow;
+import com.example.f21comp1011gctest1student.NetflixTableController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,6 +28,7 @@ public class DBUtility {
     {
         ArrayList<NetflixShow> netflixShow = new ArrayList<>();
         String sql = "SELECT * FROM netflix";
+
         try (   Connection conn = DriverManager.getConnection(connectURL, user, pw);
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(sql);
