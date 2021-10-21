@@ -54,6 +54,10 @@ public class NetflixTableController implements Initializable {
         selectRatingComboBox.getItems().addAll(validRates);
        selectRatingComboBox.getSelectionModel().getSelectedItem();
 
+        numOfShowsLabel.setText("103");
+        movieCheckBox.setSelected(true);
+        tvCheckBox.setSelected(true);
+
         showIdCol.setCellValueFactory(new PropertyValueFactory<>("showId"));
         typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
