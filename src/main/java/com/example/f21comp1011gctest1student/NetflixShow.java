@@ -7,17 +7,30 @@ public class NetflixShow {
     private String showId;
     private String type;
     private String title;
-    private int rating;
+    private String rating;
     private String director;
     private String cast ;
+    private String country ;
+    private String date_added ;
+    private int release_year ;
+    private String duration ;
+    private String listed_in ;
+    private String description ;
 
-    public NetflixShow(String showId, String type, String title, int rating, String director, String cast) {
+
+    public NetflixShow(String showId, String type, String title, String rating, String director, String cast,String country,String date_added,int release_year,String duration ,String listed_in ,String description) {
         setShowId(showId);
         setType(type);
         setTitle(title);
         setRating(rating);
         setDirector(director);
         setCast(cast);
+        setDescription(description);
+        setDate_added(date_added);
+        setListed_in(listed_in);
+        setRelease_year(release_year);
+        setCountry(country);
+        setDuration(duration);
     }
 
     public String getShowId() {
@@ -61,11 +74,11 @@ public class NetflixShow {
 
     }
 
-    public int getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(String rating) {
         List<String> validRates = Arrays.asList("PG-13","R","TV-14","TV-G","TV-MA","TV-Y","TV-Y7");
         if (validRates.contains(rating))
             this.rating = rating;
@@ -107,6 +120,54 @@ public class NetflixShow {
             throw new IllegalArgumentException("Cast name must be at least 5 characters");
         }
 
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getDate_added() {
+        return date_added;
+    }
+
+    public void setDate_added(String date_added) {
+        this.date_added = date_added;
+    }
+
+    public int getRelease_year() {
+        return release_year;
+    }
+
+    public void setRelease_year(int release_year) {
+        this.release_year = release_year;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getListed_in() {
+        return listed_in;
+    }
+
+    public void setListed_in(String listed_in) {
+        this.listed_in = listed_in;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
 

@@ -1,5 +1,6 @@
 package com.example.f21comp1011gctest1student;
 
+import Utilities.DBUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,14 +48,21 @@ public class NetflixTableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        showIdCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
-        typeCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
-        titleCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
-        ratingCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
-        directorCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
-        castCol.setCellValueFactory(new PropertyValueFactory<>("indexId"));
+        showIdCol.setCellValueFactory(new PropertyValueFactory<>("showId"));
+        typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        ratingCol.setCellValueFactory(new PropertyValueFactory<>("cast"));
+        directorCol.setCellValueFactory(new PropertyValueFactory<>("country"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("date_added"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("release_year"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("listed_in"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        castCol.setCellValueFactory(new PropertyValueFactory<>("director"));
         selectRatingComboBox.getItems().add("All ratings");
 
+        tableView.getItems().addAll(DBUtility.getNetflixShows());
     }
 
 
