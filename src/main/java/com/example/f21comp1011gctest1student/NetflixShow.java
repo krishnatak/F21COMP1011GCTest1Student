@@ -111,7 +111,7 @@ public class NetflixShow {
     }
 
     public void setCast(String cast) {
-        if (title.length()>=5)
+        if (cast.length()>=5)
         {
             this.cast = cast;
         }
